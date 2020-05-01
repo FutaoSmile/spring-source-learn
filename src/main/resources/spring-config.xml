@@ -16,4 +16,11 @@
 
 	<bean id="userFactoryBean" class="com.futao.factory.UserFactoryBean"/>
 
+	<bean id="myBeanDefinitionRegistryPostProcessor"
+		  class="com.futao.postprocessor.MyBeanDefinitionRegistryPostProcessor"/>
+
+	<bean id="myBeanFactoryPostProcessor" class="com.futao.postprocessor.MyBeanFactoryPostProcessor"/>
+
+	<bean id="myBeanPostProcessor" class="com.futao.postprocessor.MyBeanPostProcessor"/>
+
 </beans>

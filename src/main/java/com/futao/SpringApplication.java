@@ -37,6 +37,11 @@ public class SpringApplication {
 		System.out.println(applicationContext.getBean("&userFactoryBean"));
 		System.out.println(applicationContext.getBean("&userFactoryBean"));
 
+		System.out.println(applicationContext.getBean("userByBeanDefinitionRegistryPostProcessor"));
+		System.out.println(applicationContext.getBean("userByBeanDefinitionRegistryPostProcessor"));
+
+
+
 
 	}
 
