@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xmlns:context="http://www.springframework.org/schema/context"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+				http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context-2.5.xsd">
+
+
+	<bean id="user1" class="com.futao.entity.User" scope="singleton" lazy-init="true" primary="true"/>
+
+	<!--使用静态工厂创建bean-->
+	<bean id="user2" class="com.futao.factory.StaticUserFactory" factory-method="getUser" scope="singleton"/>
+	<!--使用实例工厂创建bean,需要先创建工厂Bean，再引用这个工厂Bean创建Bean-->
+	<bean id="userFactory" class="com.futao.factory.UserFactory"/>
+	<bean id="user3" factory-bean="userFactory" factory-method="getUser" scope="prototype"/>
+
+	<bean id="userFactoryBean" class="com.futao.factory.UserFactoryBean"/>
+
+</beans>
