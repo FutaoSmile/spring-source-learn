@@ -17,6 +17,5 @@ public class WelcomeController {
 	public void handleRequest() {
 		welcomeService.sayHello("来自controller的问候");
 	}
-
-
+	
 }

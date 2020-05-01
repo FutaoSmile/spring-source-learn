@@ -6,6 +6,8 @@ import org.springframework.context.ApplicationEventPublisherAware;
 import org.springframework.context.ApplicationListener;
 import org.springframework.stereotype.Component;
 
+import java.io.Serializable;
+
 /**
  * @author futao
  * @date 2020/5/1
@@ -33,7 +35,10 @@ public class MyApplicationEventPublishAware implements ApplicationEventPublisher
 	}
 
 
-	public static class Ev extends ApplicationEvent {
+	public static class Ev extends ApplicationEvent implements Serializable {
+
+		private static final long serialVersionUID = 1L;
+
 		/**
 		 * Create a new {@code ApplicationEvent}.
 		 *

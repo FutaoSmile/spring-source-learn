@@ -24,6 +24,8 @@
 	<bean id="myBeanPostProcessor" class="com.futao.postprocessor.MyBeanPostProcessor"/>
 
 
+	<bean class="com.futao.controller.WelcomeController" id="welcomeController"/>
+
 	<import resource="classpath:aware.xml"/>
 	<import resource="classpath:events.xml"/>
 

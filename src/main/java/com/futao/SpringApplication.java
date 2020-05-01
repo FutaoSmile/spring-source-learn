@@ -1,10 +1,12 @@
 package com.futao;
 
+import com.futao.aop.enhance.Say;
 import com.futao.controller.WelcomeController;
 import com.futao.service.WelcomeService;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.context.support.FileSystemXmlApplicationContext;
 
 /**
@@ -13,10 +15,12 @@ import org.springframework.context.support.FileSystemXmlApplicationContext;
  */
 @ComponentScan("com.futao")
 @Configuration
+@EnableAspectJAutoProxy()
 public class SpringApplication {
 
 	public static void main(String[] args) {
-		baseXml();
+//		baseXml();
+		baseAnno();
 	}
 
 	public static void baseXml() {
@@ -41,6 +45,8 @@ public class SpringApplication {
 		System.out.println(applicationContext.getBean("userByBeanDefinitionRegistryPostProcessor"));
 
 
+		WelcomeController welcomeController = applicationContext.getBean(WelcomeController.class);
+		welcomeController.handleRequest();
 
 
 	}
@@ -56,6 +62,11 @@ public class SpringApplication {
 
 		WelcomeController welcomeController = (WelcomeController) applicationContext.getBean("welcomeController");
 		welcomeController.handleRequest();
+
+
+		Say controller = (Say) welcomeController;
+		controller.introduceSelf();
+
 	}
 
 }

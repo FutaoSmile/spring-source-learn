@@ -53,3 +53,13 @@
     * AbstractApplicationEventMulticaster
         * SimpleApplicationEventMulticaster
 * EventListenerMethodProcessor
+
+
+### # 依赖注入
+![image.png](https://upload-images.jianshu.io/upload_images/1846623-4bc9747df02dcaee.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+
+
+### #AOP
+* 强制给目标类实现一个代码中没有实现的接口
+    * @DeclareParents
