@@ -23,4 +23,7 @@
 
 	<bean id="myBeanPostProcessor" class="com.futao.postprocessor.MyBeanPostProcessor"/>
 
+
+	<import resource="classpath:aware.xml"/>
+
 </beans>
